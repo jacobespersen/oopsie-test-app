@@ -9,7 +9,7 @@ def get_user_input(raw: str | None) -> str:
     (deliberate bug: caller expects a string and uses .strip()).
     """
     if raw is None or raw == "":
-        return None  # Bug: should return "" or " " so caller can safely .strip()
+        return ""
     return raw
 
 
