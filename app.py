@@ -5,11 +5,10 @@ Minimal app with a deliberate, fixable bug for Oopsie error-ingestion testing.
 
 def get_user_input(raw: str | None) -> str:
     """
-    Returns normalized user input. Can return None when raw is None
-    (deliberate bug: caller expects a string and uses .strip()).
+    Returns normalized user input. Returns an empty string when raw is None or empty.
     """
     if raw is None or raw == "":
-        return None  # Bug: should return "" or " " so caller can safely .strip()
+        return ""  # Return empty string so caller can safely call .strip()
     return raw
 
 
